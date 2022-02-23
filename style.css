@@ -16,6 +16,15 @@ img {
   margin-right: auto;
 }
 
+label {
+        display: block;
+        text-indent: -5em;
+        float: left;
+        width: 70px;
+        
+        
+       
+
 table,
 th,
 td {
