@@ -22,8 +22,9 @@ label {
         float: left;
         width: 70px;
         
-        
-       
+        padding-right: 20px;
+        padding-left: 200px;
+}
 
 table,
 th,
