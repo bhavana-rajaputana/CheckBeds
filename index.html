@@ -1,34 +1,435 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HBMS</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://media.istockphoto.com/vectors/checkmark-icon-check-mark-vector-isolated-illustration-vector-id1205148147?k=20&m=1205148147&s=612x612&w=0&h=6WoITHTxFwIBVnfODxsh7wAzU3-AZFkg0YZ5U_8COqw="
-    />
-  </head>
-  <body>
-   
-    <div class="topnav" id="myTopnav">
-  <a href="admin.html" target="_blank" rel="noopener" class="active">Admin Login</a>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
   
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-<br>
+<link rel="apple-touch-icon" type="image/png" href="" />
+<meta name="" content="">
 
-    <img  class="shadow" src="logo.jpeg" alt="logo" width="90%" height="400" />
 
-    
-    <div class="table" id="results">
+  <title>HBMS</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+  
+<style>
+  body {
+  background-image: url('hospbg.jpeg');
+  background-repeat: no-repeat;
+   background-attachment: fixed;
+  background-size: cover;
+}
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+  height: 100vh;
+  background-image: url("hospbg.jpg");
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(51, 51, 51, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+.modal-container {
+  display: flex;
+  max-width: 720px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 0.3s;
+  background: #fff;
+  transform: translateY(100px) scale(0.4);
+}
+.modal-title {
+  font-size: 26px;
+  margin: 0;
+  font-weight: 400;
+  color: #55311c;
+}
+.modal-desc {
+  margin: 6px 0 30px 0;
+}
+.modal-left {
+  padding: 60px 30px 20px;
+  background: #fff;
+  flex: 1.5;
+  transition-duration: 0.5s;
+  transform: translateY(80px);
+  opacity: 0;
+}
+.modal-button {
+  color: #7d695e;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  padding: 10px 40px;
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
+  transition: 0.3s;
+}
+.modal-button:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+}
+.modal-right {
+  flex: 2;
+  font-size: 0;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.modal-right img {
+  width: 100%;
+  height: 100%;
+  transform: scale(2);
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition-duration: 1.2s;
+}
+.modal.is-open {
+  height: 100%;
+  background: rgba(51, 51, 51, 0.85);
+}
+.modal.is-open .modal-button {
+  opacity: 0;
+}
+.modal.is-open .modal-container {
+  opacity: 1;
+  transition-duration: 0.6s;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+.modal.is-open .modal-right img {
+  transform: scale(1);
+}
+.modal.is-open .modal-left {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-buttons a {
+  color: rgba(51, 51, 51, 0.6);
+  font-size: 14px;
+}
+
+.sign-up {
+  margin: 60px 0 0;
+  font-size: 14px;
+  text-align: center;
+}
+.sign-up a {
+  color: #8c7569;
+}
+
+.input-button {
+  padding: 8px 12px;
+  outline: none;
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  background: #8c7569;
+  font-family: "Nunito", sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.input-button:hover {
+  background: #55311c;
+}
+
+.input-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  color: #8c7569;
+  transition: 0.3s;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.input-block input {
+  outline: 0;
+  border: 0;
+  padding: 4px 0 0;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+}
+.input-block input::-moz-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.input-block input:-ms-input-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.input-block input::placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+.input-block:focus-within {
+  border-color: #8c7569;
+}
+.input-block:focus-within .input-label {
+  color: rgba(140, 117, 105, 0.8);
+}
+
+.icon-button {
+  outline: 0;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.cen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 300%;
+  font-weight: 900;
+  opacity:1.5;
+  transform: translate(-50%, -50%);
+}
+
+.scroll-down {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #7d695e;
+  font-size: 32px;
+  font-weight: 800;
+  transform: translate(-50%, -50%);
+}
+.scroll-down svg {
+  margin-top: 16px;
+  width: 52px;
+  fill: currentColor;
+}
+
+@media (max-width: 750px) {
+  .modal-container {
+    width: 90%;
+  }
+
+  .modal-right {
+    display: none;
+  }
+}
+
+.table {
+    display: table;
+    text-align: center;
+    width: 60%;
+    margin:3% auto 0;
+    border-collapse: separate;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  
+  .table_row {
+    display: table-row;
+  }
+  
+  .theader {
+    display: table-row;
+  }
+  
+  .table_header {
+    display: table-cell;
+    border-bottom: rgb(230, 230, 230) 1px solid;
+    border-top: #ccc 1px solid;
+    background: #bdbdbd;
+    color: #e5e5e5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .table_header:first-child {
+    border-left: #ccc 1px solid;
+    border-top-left-radius: 5px;
+  }
+  
+  .table_header:last-child {
+    border-right: #ccc 1px solid;
+    border-top-right-radius: 5px;
+  }
+  
+  .table_small {
+    display: table-cell;
+  }
+  
+  .table_row > .table_small > .table_cell:nth-child(odd) {
+    display: none;
+    background: #bdbdbd;
+    color: #e5e5e5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .table_row > .table_small > .table_cell {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: #5b5b5b;
+    border-bottom: #ccc 1px solid;
+  }
+  
+  .table_row > .table_small:first-child > .table_cell {
+    border-left: #ccc 1px solid;
+  }
+  
+  .table_row > .table_small:last-child > .table_cell {
+    border-right: #ccc 1px solid;
+  }
+  
+  .table_row:last-child > .table_small:last-child > .table_cell:last-child {
+    border-bottom-right-radius: 5px;
+  }
+  
+  .table_row:last-child > .table_small:first-child > .table_cell:last-child {
+    border-bottom-left-radius: 5px;
+  }
+  
+  .table_row:nth-child(n) {
+    background: #e9e9e9;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .table {
+      width: 90%
+    }
+  }
+  
+  @media screen and (max-width: 650px) {
+    .table {
+      display: block;
+    }
+    .table_row:nth-child(2n+3) {
+      background: none;
+    }
+    .theader {
+      display: none;
+    }
+    .table_row > .table_small > .table_cell:nth-child(odd) {
+      display: table-cell;
+      width: 50%;
+    }
+    .table_cell {
+      display: table-cell;
+      width: 50%;
+    }
+    .table_row {
+      display: table;
+      width: 100%;
+      border-collapse: separate;
+      padding-bottom: 20px;
+      margin: 5% auto 0;
+      text-align: center;
+    }
+    .table_small {
+      display: table-row;
+    }
+    .table_row > .table_small:first-child > .table_cell:last-child {
+      border-left: none;
+    }
+    .table_row > .table_small > .table_cell:first-child {
+      border-left: #ccc 1px solid;
+    }
+    .table_row > .table_small:first-child > .table_cell:first-child {
+      border-top-left-radius: 5px;
+      border-top: #ccc 1px solid;
+    }
+    .table_row > .table_small:first-child > .table_cell:last-child {
+      border-top-right-radius: 5px;
+      border-top: #ccc 1px solid;
+    }
+    .table_row > .table_small:last-child > .table_cell:first-child {
+      border-right: none;
+    }
+    .table_row > .table_small > .table_cell:last-child {
+      border-right: #ccc 1px solid;
+    }
+    .table_row > .table_small:last-child > .table_cell:first-child {
+      border-bottom-left-radius: 5px;
+    }
+    .table_row > .table_small:last-child > .table_cell:last-child {
+      border-bottom-right-radius: 5px;
+    }
+  }
+
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+  
+
+<body translate="no" >
+<br><br><br><br>
+<h1 align="center">CHECK BEDS</h1>
+<div class="table" id="results">
       <div class="theader">
         <div class="table_header">Sl.NO</div>
         <div class="table_header">Name of the Hospital</div>
@@ -109,7 +510,78 @@
       
       </div>
     </div>
-    <br /><br />
-    last updated: 07:27 PM
-  </body>
+<div class="modal">
+  <div class="modal-container">
+    <div class="modal-left">
+      <h1 class="modal-title">Welcome!</h1>
+      <p class="modal-desc">Please login using username and password.</p>
+      <div class="input-block">
+        <label for="Usename" class="input-label">username</label>
+        <input type="username" name="username" id="username" placeholder="username">
+      </div>
+      <div class="input-block">
+        <label for="password" class="input-label">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+      </div>
+      <div class="modal-buttons">
+        <a href="" class="">Forgot your password?</a>
+        <button class="input-button">Login</button>
+      </div>
+      <p class="sign-up">Don't have an account? <a href="signup.html">Sign up now</a></p>
+    </div>
+    <div class="modal-right">
+      <img src="logos.png" alt="">
+    </div>
+    <button class="icon-button close-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <path d="M 25 3 C 12.86158 3 3 12.86158 3 25 C 3 37.13842 12.86158 47 25 47 C 37.13842 47 47 37.13842 47 25 C 47 12.86158 37.13842 3 25 3 z M 25 5 C 36.05754 5 45 13.94246 45 25 C 45 36.05754 36.05754 45 25 45 C 13.94246 45 5 36.05754 5 25 C 5 13.94246 13.94246 5 25 5 z M 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.980469 15.990234 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 z"></path>
+</svg>
+      </button>
+  </div>
+  <button class="modal-button">Click here to login</button>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  
+      <script id="rendered-js" >
+const body = document.querySelector("body");
+const modal = document.querySelector(".modal");
+const modalButton = document.querySelector(".modal-button");
+const closeButton = document.querySelector(".close-button");
+const scrollDown = document.querySelector(".scroll-down");
+let isOpened = false;
+
+const openModal = () => {
+  modal.classList.add("is-open");
+  body.style.overflow = "hidden";
+};
+
+const closeModal = () => {
+  modal.classList.remove("is-open");
+  body.style.overflow = "initial";
+};
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > window.innerHeight / 3 && !isOpened) {
+    isOpened = true;
+    scrollDown.style.display = "none";
+    openModal();
+  }
+});
+
+modalButton.addEventListener("click", openModal);
+closeButton.addEventListener("click", closeModal);
+
+document.onkeydown = evt => {
+  evt = evt || window.event;
+  evt.keyCode === 27 ? closeModal() : false;
+};
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
 </html>
+ 

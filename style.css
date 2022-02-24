@@ -1,14 +1,10 @@
 body {
     background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-background-image: linear-gradient(to top, #a8edea 0%, #E3FDF5 100%);
-background-attachment: fixed;
+    background-blend-mode: overlay;
+background-image: linear-gradient(to top, #a8edea 0%, #c1e6db 100%);
+
   background-repeat: no-repeat;
 
-    font-family: 'Vibur', cursive;
-/*   the main font */
-    font-family: 'Abel', sans-serif;
-opacity: .95;
-/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
 }
 .center {
   display: block;
@@ -217,3 +213,4 @@ label {
 }
 /**********************admin***************/
 
+#success_message{ display: none;}
