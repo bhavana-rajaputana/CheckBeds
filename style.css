@@ -25,12 +25,12 @@ label {
         padding-right: 20px;
         padding-left: 200px;
 }
-
+/***********************table**************************************/
 .table {
     display: table;
     text-align: center;
     width: 60%;
-    margin: 10% auto 0;
+    margin:3% auto 0;
     border-collapse: separate;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -166,9 +166,44 @@ label {
       border-bottom-right-radius: 5px;
     }
   }
-
+/***********************pic**************************************/
 .shadow {filter: drop-shadow(8px 8px 10px rgb(7, 7, 7)); display: block;
   margin-left: auto;
   margin-right: auto;
   width: 90%;}
+
+
+/***********************nav bar**************************************/
+  .topnav {
+  background-color: #219f94;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #219f94;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
 
