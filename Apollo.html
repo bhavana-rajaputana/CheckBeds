@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+
+
+<title>Apollo</title>
+
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+  
+<style>
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,300);
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+::-webkit-input-placeholder {
+  color: #e4e4e4;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #C1DEAE;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.wrapper {
+  margin: 40px auto;
+  width: 1000px;
+}
+
+h1 {
+  margin: 10px;
+  color: #219F94;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.grid {
+  height: 200px;
+  border-color: #3b5bdb;
+  background-color: #fff;
+  border: 2px solid #Be8a5c;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.grid:hover .grid-overlay {
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+.grid:hover .grid-overlay .overlay-header {
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+.grid:hover .grid-overlay .overlay-header:before {
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.grid-header {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 30px;
+}
+.grid-header:hover {
+  cursor: pointer;
+}
+.grid-header .icon {
+  color: #333;
+  font-size: 50px;
+}
+.grid-header .label {
+  color: #219F94;
+  margin-top: 10px;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(203, 163, 128, 0.92);
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transform: translate(-10%, 0);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.overlay-content-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  color: #ffff;
+}
+.overlay-content-wrapper .overlay-header {
+  font-size: 25px;
+  margin-bottom: 25px;
+  position: relative;
+  transform: translatex(-70px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out 0.4s, transform 0.7s ease-in-out 0.4s;
+}
+.overlay-content-wrapper .overlay-header:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 40px;
+  height: 3px;
+  background-color: #dbbb3b;
+  transform: translatey(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out 0.8s, transform 0.2s ease-in-out 0.7s;
+}
+
+.user-grid {
+  border: 0;
+}
+.user-grid .label {
+  color: #222;
+  font-size: 22px;
+}
+
+.overlay-label {
+  font-size: 14px;
+  line-height: 1.3;
+  word-spacing: 2px;
+}
+
+.ajduke {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.ajduke .fa-heart {
+  color: tomato;
+  padding: 0 5px;
+}
+.ajduke a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
+.ajduke a:hover, .ajduke a:visited, .ajduke a.active {
+  color: inherit;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="wrapper">
+  <h1>   <img src="logoas.png"  width="100" height="100"> <br>Doctors Availability</br></h1>
+  <div class="inner-container">
+    <div class="grid-wrapper">
+      <div class="grid">
+        <div class="grid-header">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+          <div class="label">
+            Specialization
+          </div>
+        </div>
+        <div class="grid-overlay">
+          <div class="overlay-content-wrapper">
+
+            <div class="overlay-header">
+             Specialization
+            </div>
+            <div class="overlay-label">
+		     Name of the Doctor:
+			  <br><br>
+			  
+			  Availability:</br></br>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="grid">
+        <div class="grid-header">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+          </div>
+          <div class="label">
+         Specialization
+          </div>
+        </div>
+        <div class="grid-overlay">
+          <div class="overlay-content-wrapper">
+
+            <div class="overlay-header">
+             Specialization
+            </div>
+            <div class="overlay-label">
+              Name of the Doctor:
+			  <br><br>
+			  
+			  Availability:</br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid-header">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+          </div>
+          <div class="label">
+            Specialization
+          </div>
+        </div>
+        <div class="grid-overlay">
+          <div class="overlay-content-wrapper">
+
+            <div class="overlay-header">
+             Specialization
+            </div>
+            <div class="overlay-label">
+             Name of the Doctor:
+			  <br><br>
+			  
+			  Availability:</br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid-header">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+          </div>
+          <div class="label">
+          Specialization
+          </div>
+        </div>
+        <div class="grid-overlay">
+          <div class="overlay-content-wrapper">
+
+            <div class="overlay-header">
+        Specialization
+            </div>
+            <div class="overlay-label">
+              Name of the Doctor:
+			  <br><br>
+			  
+			  Availability:</br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid user-grid">
+        <div class="grid-header">
+          <div class="icon">
+
+
+
+          </div>
+          <div class="label">
+		  
+		 
+           <img src="Doc.jpg" width="270" height="150">
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid-header">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+          </div>
+          <div class="label">
+        Specialization
+          </div>
+        </div>
+        <div class="grid-overlay">
+          <div class="overlay-content-wrapper">
+
+            <div class="overlay-header">
+           Specialization
+            </div>
+            <div class="overlay-label">
+              Name of the Doctor:
+			  <br><br>
+			  
+			  Availability:</br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid-header">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+          </div>
+          <div class="label">
+         Specialization
+          </div>
+        </div>
+        <div class="grid-overlay">
+          <div class="overlay-content-wrapper">
+
+            <div class="overlay-header">
+         Specialization
+            </div>
+            <div class="overlay-label">
+              Name of the Doctor:
+			  <br><br>
+			  
+			  Availability:</br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid-header">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+          </div>
+          <div class="label">
+          Specialization
+          </div>
+        </div>
+        <div class="grid-overlay">
+          <div class="overlay-content-wrapper">
+
+            <div class="overlay-header">
+             Specialization
+            </div>
+            <div class="overlay-label">
+              Name of the Doctor:
+			  <br><br>
+			  
+			  Availability:</br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid-header">
+          <div class="icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+          </div>
+          <div class="label">
+           Secialization
+          </div>
+        </div>
+        <div class="grid-overlay">
+          <div class="overlay-content-wrapper">
+
+            <div class="overlay-header">
+             Specialization
+            </div>
+            <div class="overlay-label">
+              Name of the Doctor:
+			  <br><br>
+			  
+			  Availability:</br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  
+    <div class="foot-content">
+   <div class='ajduke'>
+    <i class="fa fa-phone" aria-hidden="true" style="font-size:35px;color:#000" > Contact:</i> 
+   </div>
+
+  </div>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+      <script id="rendered-js" >
+$(document).ready(() => {
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
