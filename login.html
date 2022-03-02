@@ -1,209 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <style>
-    .border {
-    border: 1px solid #009688 !important;
-}</style>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Update Beds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
     />
+    <style>
+      .border {
+        margin: auto;
+  
+       width: 90%;
+        padding: 10px;
+        margin: 5px;
+        border: 3px solid #dedede;
+        border-radius: 10px;
+      }
+	  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="uti.css" />
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Optional JavaScript -->
-    <title>Utilities</title>
+.html {
+  font-size: 62.5%;
+}
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: #219f94;
+  color: #fff;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.menu-items {
+  order: 2;
+  display: flex;
+}
+.logo {
+  order: 1;
+  font-size: 1.8rem;
+}
+
+.menu-items li,
+button {
+  list-style: none;
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+img {
+  float: left;
+}
+
+button {
+  padding: 8px 19px;
+  margin-right: 20px;
+  background-color: rgb(0, 0, 0 , 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all ease-in-out 0s;
+}
+
+button:hover a {
+  color: #219F94;
+}
+
+button:hover {
+  background: #fff;
+  color: #219f94;
+}
+
+.navbar a:hover {
+  color: #c1deae;
+}
+
+@media (max-width: 768px) {
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block;
+  }
+
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 64px;
+  }
+
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .navbar-container .hamburger-lines {
+    display: block;
+    height: 28px;
+    width: 35px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line2 {
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar .menu-items {
+    padding-top: 100px;
+    background: #24252a;
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 40px;
+    transition: transform 0.5s ease-in-out;
+    overflow: scroll;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 1.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  button {
+    width: fit-content;
+    margin-left: 1rem;
+  }
+
+  .logo {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 1.7rem;
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar-container input[type="checkbox"]:checked ~ .logo {
+    display: none;
+  }
+}
+    </style>
   </head>
-
-  <body style="background-color:#C1DEAE;">
-    <br>
-  <p>
- <a href="index.html">
-<input type="image" src="home.png"  height="40" width="50" onclick="index.html"/>
- </a>
-</p>
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-xl-7 col-lg-8 col-md-7">
-          <div class="border border-black p-3">
-            <h2 class="h6 text-uppercase mb-0">
-              UPDATE BED AVAILABILITY <strong class="cart-total"></strong>
-            </h2>
-          </div>
-
-          <div class="border border-black p-3 mt-3 clearfix item">
-            <div class="text-lg-left">
-              <i class="fa fa-bed fa-2x text-center" aria-hidden="true"style="font-size:35px;color:#219F94"></i>
-            </div>
-            <div class="col-lg-5 col-5 text-lg-left">
-              <h3 class="h6 mb-0">
-                EMERGENCY BEDS<br />
-                <small></small>
-              </h3>
-            </div>
-            <div class="product-price d-none">50</div>
-            <div class="pass-quantity col-lg-3 col-md-4 col-sm-3">
-              <label for="pass-quantity" class="pass-quantity">Quantity</label>
-              <input class="form-control" type="number" value="1" min="0" />
-            </div>
-            <div class="col-lg-2 col-md-1 col-sm-2 product-line-price pt-4">
-              
-            </div>
-            <div class="remove-item pt-4">
-              
-            </div>
-          </div>
-
-          <div class="border border-black p-3 mt-3 clearfix item">
-            <div class="text-lg-left">
-              <i class="fa fa-bed fa-2x text-center" aria-hidden="true"style="font-size:35px;color:#219F94"></i>
-            </div>
-            <div class="col-lg-5 col-5 text-lg-left">
-              <h3 class="h6 mb-0">
-                GENERAL BEDS<br /><small><small></small></small>
-              </h3>
-            </div>
-            <div class="product-price d-none">45.00</div>
-            <div class="pass-quantity col-lg-3 col-md-4 col-sm-3">
-              <label for="pass-quantity" class="pass-quantity">Quantity</label>
-              <input class="form-control" type="number" value="1" min="1" />
-            </div>
-            <div class="col-lg-2 col-md-1 col-sm-2 product-line-price pt-4">
-              <span class="product-line-price">45.00</span>
-            </div>
-            <div class="remove-item pt-4">
-             
-            </div>
-          </div>
-          <!-- item -->
+  
+  <body style="background-color : #C1DEAE">
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container container">
+        <input type="checkbox" name="" id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
         </div>
+        <ul class="menu-items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Utilities</a></li>
+		  <li><a href="#">Doctors Availability</a></li>
+		  <li><a href="#">Account Details</a></li>
+          <button><a href="index.html">LogOut</a></button>
+        </ul>
+        <h1 class="logo">CheckBeds</h1>
+      </div>
+    </nav><br><br><br><br><br>
 
-        <div class="col-xl-3 col-lg-4 col-md-5 totals">
-          <div class="border border-black px-3">
-            <div class="border-bottom border-black">
-              <p class="text-uppercase mb-0 py-3">
-                <strong>Total Beds</strong>
-              </p>
-            </div>
-            <div
-              class="totals-item d-flex align-items-center justify-content-between mt-3"
-            >
-              <p class="text-uppercase">Emergency Beds</p>
-              <p class="totals-value" id="cart-subtotal"></p>
-            </div>
-            <div
-              class="totals-item d-flex align-items-center justify-content-between"
-            >
-              <p class="text-uppercase">General Beds</p>
-              <p class="totals-value" id="cart-tax"></p>
-            </div>
-            <div
-              class="totals-item totals-item-total d-flex align-items-center justify-content-between mt-3 pt-30 border-top border-black"
-            >
-              <p class="text-uppercase"><strong>Total</strong></p>
-              <p class="totals-value font-weight-bold cart-total"></p>
-            </div>
-          </div>
-          <a
-            href="#"
-            class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0"
-            >UPDATE <span class="totals-value cart-total"></span
-          ></a>
-        </div>
+    <div class="border">
+      <h2 align="center">UPDATE BED AVAILABILITY</h2>
+    </div><br>
+    <div class="border">
+      <img src="imgbedemergency.png" alt="bed" width="40" height="30" style="vertical-align:middle;margin:0px 50px">
+      <h3>EMERGENCY BEDS</h3><br>
+      <h4>Quantity</h4>
+      <input type="number" class="e-quan" />
+    </div><br>
+    <div class="border">
+      <img src="imgbed.png" alt="bed" width="40" height="30" style="vertical-align:middle;margin:0px 50px">
+      <h3>GENERAL BEDS</h3><br>
+      <h4>Quantity</h4>
+      <input type="number" class="g-quan" />
+    </div><br>
+    
+      <div class="border">
+        <button type="submit" style="background-color: #219f94" style"color:"white">UPDATE</button>
       </div>
     </div>
-    <!-- container -->
-
-    <script>
-      $(document).ready(function () {
-        /* Set rates + misc */
-        var taxRate = 0;
-        var fadeTime = 200;
-
-        $(".pass-quantity input").change(function () {
-          updateQuantity(this);
-        });
-
-        $(".remove-item button").click(function () {
-          removeItem(this);
-        });
-
-        /* Recalculate cart */
-        function recalculateCart() {
-          var subtotal = 0;
-
-          /* Sum up row totals */
-          $(".item").each(function () {
-            subtotal += parseFloat(
-              $(this).children(".product-line-price").text()
-            );
-          });
-
-          /* Calculate totals */
-          var tax = subtotal * taxRate;
-          var total = subtotal + tax;
-
-          /* Update totals display */
-          $(".totals-value").fadeOut(fadeTime, function () {
-            $("#cart-subtotal").html(subtotal.toFixed(2));
-            $("#cart-tax").html(tax.toFixed(2));
-            $(".cart-total").html(total.toFixed(2));
-            if (total == 0) {
-              $(".checkout").fadeOut(fadeTime);
-            } else {
-              $(".checkout").fadeIn(fadeTime);
-            }
-            $(".totals-value").fadeIn(fadeTime);
-          });
-        }
-
-        /* Update quantity */
-        function updateQuantity(quantityInput) {
-          /* Calculate line price */
-          var productRow = $(quantityInput).parent().parent();
-          var price = parseFloat(productRow.children(".product-price").text());
-          var quantity = $(quantityInput).val();
-          var linePrice = price * quantity;
-
-          /* Update line price display and recalc cart totals */
-          productRow.children(".product-line-price").each(function () {
-            $(this).fadeOut(fadeTime, function () {
-              $(this).text(linePrice.toFixed(2));
-              recalculateCart();
-              $(this).fadeIn(fadeTime);
-            });
-          });
-        }
-
-        /* Remove item from cart */
-      
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
-
- <link rel="stylesheet" href="uti.css"/></head>
