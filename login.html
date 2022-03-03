@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="script.js"></script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Update Beds</title>
@@ -9,221 +10,9 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css">
     <style>
-      .border {
-        margin: auto;
-  
-       width: 90%;
-        padding: 10px;
-        margin: 5px;
-        border: 3px solid #dedede;
-        border-radius: 10px;
-      }
-	  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-}
-
-.html {
-  font-size: 62.5%;
-}
-
-.navbar input[type="checkbox"],
-.navbar .hamburger-lines {
-  display: none;
-}
-
-.container {
-  max-width: 1200px;
-  width: 90%;
-  margin: auto;
-}
-
-.navbar {
-  position: fixed;
-  width: 100%;
-  background: #219f94;
-  color: #fff;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-}
-
-.menu-items {
-  order: 2;
-  display: flex;
-}
-.logo {
-  order: 1;
-  font-size: 1.8rem;
-}
-
-.menu-items li,
-button {
-  list-style: none;
-  margin-left: 1.5rem;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
-}
-img {
-  float: left;
-}
-
-button {
-  padding: 8px 19px;
-  margin-right: 20px;
-  background-color: rgb(0, 0, 0 , 1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all ease-in-out 0s;
-}
-
-button:hover a {
-  color: #219F94;
-}
-
-button:hover {
-  background: #fff;
-  color: #219f94;
-}
-
-.navbar a:hover {
-  color: #c1deae;
-}
-
-@media (max-width: 768px) {
-  .navbar-container input[type="checkbox"],
-  .navbar-container .hamburger-lines {
-    display: block;
-  }
-
-  .navbar-container {
-    display: block;
-    position: relative;
-    height: 64px;
-  }
-
-  .navbar-container input[type="checkbox"] {
-    position: absolute;
-    display: block;
-    height: 32px;
-    width: 30px;
-    top: 20px;
-    left: 20px;
-    z-index: 5;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .navbar-container .hamburger-lines {
-    display: block;
-    height: 28px;
-    width: 35px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .navbar-container .hamburger-lines .line {
-    display: block;
-    height: 4px;
-    width: 100%;
-    border-radius: 10px;
-    background: #fff;
-  }
-
-  .navbar-container .hamburger-lines .line1 {
-    transform-origin: 0% 0%;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .navbar-container .hamburger-lines .line2 {
-    transition: transform 0.1s ease-in-out;
-  }
-
-  .navbar-container .hamburger-lines .line3 {
-    transform-origin: 0% 100%;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .navbar .menu-items {
-    padding-top: 100px;
-    background: #24252a;
-    height: 100vh;
-    max-width: 300px;
-    transform: translate(-150%);
-    display: flex;
-    flex-direction: column;
-    margin-left: -40px;
-    padding-left: 40px;
-    transition: transform 0.5s ease-in-out;
-    overflow: scroll;
-  }
-
-  .navbar .menu-items li {
-    margin-bottom: 1.8rem;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  button {
-    width: fit-content;
-    margin-left: 1rem;
-  }
-
-  .logo {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    font-size: 1.7rem;
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
-    transform: translateX(0);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-    transform: rotate(45deg);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-    transform: scaleY(0);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-    transform: rotate(-45deg);
-  }
-}
-
-@media (max-width: 500px) {
-  .navbar-container input[type="checkbox"]:checked ~ .logo {
-    display: none;
-  }
-}
+      
     </style>
   </head>
   
@@ -256,19 +45,59 @@ button:hover {
       <img src="imgbedemergency.png" alt="bed" width="40" height="30" style="vertical-align:middle;margin:0px 50px">
       <h3>EMERGENCY BEDS</h3><br>
       <h4>Quantity</h4>
-      <input type="number" class="e-quan" />
+      <input type="number" class="e-quan" /><br><br>
     </div><br>
     <div class="border">
       <img src="imgbed.png" alt="bed" width="40" height="30" style="vertical-align:middle;margin:0px 50px">
       <h3>GENERAL BEDS</h3><br>
       <h4>Quantity</h4>
       <input type="number" class="g-quan" />
+
+
+<div class="new">
+  <form>
+    <div class="form-group">
+	<h3>BLOOD GROUPS AVAILABLE</h3><br>
+      <input type="checkbox" id="A+">
+      <label for="A+">A+</label>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="O+">
+      <label for="O+">O+</label>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="B+">
+      <label for="B+">B+</label>
+    </div>
+	<div class="form-group">
+      <input type="checkbox" id="AB+">
+      <label for="AB+">AB+</label>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="A-">
+      <label for="A-">A-</label>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="B-">
+      <label for="B-">B-</label>
+    </div>
+	<div class="form-group">
+      <input type="checkbox" id="AB-">
+      <label for="AB-">AB-</label>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="O-">
+      <label for="O-">O-</label>
+    </div>
+  </form>
+</div>
+
     </div><br>
     
       <div class="border">
         <button type="submit" style="background-color: #219f94" style"color:"white">UPDATE</button>
       </div>
     </div>
-    <script src="script.js"></script>
+    
   </body>
 </html>
