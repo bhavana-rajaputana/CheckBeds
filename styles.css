@@ -1,7 +1,7 @@
 .border {
         margin: auto;
   
-       width: 90%;
+       width: 100%;
         padding: 10px;
         margin: 5px;
         border: 3px solid #dedede;
@@ -189,7 +189,16 @@ button:hover {
     right: 15px;
     font-size: 1.7rem;
   }
-
+  .border input {
+  padding: 8px;
+  border-radius: 8px;
+}
+.border h4 {
+  padding: 5px;
+}
+.border {
+  width: 98%;
+}
   .navbar-container input[type="checkbox"]:checked ~ .menu-items {
     transform: translateX(0);
   }
