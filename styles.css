@@ -189,16 +189,8 @@ button:hover {
     right: 15px;
     font-size: 1.7rem;
   }
-  .border input {
-  padding: 8px;
-  border-radius: 8px;
-}
-.border h4 {
-  padding: 5px;
-}
-.border {
-  width: 98%;
-}
+
+
   .navbar-container input[type="checkbox"]:checked ~ .menu-items {
     transform: translateX(0);
   }
@@ -278,4 +270,12 @@ button:hover {
   border: solid #0079bf;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+  .border input {
+  padding: 8px;
+  border-radius: 8px;
+}
+.border h4 {
+  padding: 5px;
 }
