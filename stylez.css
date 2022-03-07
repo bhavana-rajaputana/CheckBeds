@@ -53,7 +53,7 @@ input[type="text"].required-background {
   border: 5px solid #be8a5c;
 }
 .form-fieldset {
-  background-color: #f7f7f7;
+  background-color: #c1deae;
   display: block;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -61,7 +61,7 @@ input[type="text"].required-background {
   border-radius: 6px;
   padding: 1em;
   margin: 0 auto 10px auto;
-  border: 1px solid #f2f5c8;
+  border: 1px solid #be8a5c;
 }
 h2 {
   display: block;
